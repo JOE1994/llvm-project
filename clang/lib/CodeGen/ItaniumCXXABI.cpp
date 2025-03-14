@@ -2149,7 +2149,7 @@ llvm::GlobalVariable *ItaniumCXXABI::getAddrOfVTable(const CXXRecordDecl *RD,
   // Queue up this vtable for possible deferred emission.
   CGM.addDeferredVTable(RD);
 
-  SmallString<256> Name;
+  SmallString<128> Name;
   llvm::raw_svector_ostream Out(Name);
   getMangleContext().mangleCXXVTable(RD, Out);
 
